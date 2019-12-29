@@ -1,17 +1,19 @@
 main {
   display: grid;
   gap: 10px;
-  background-color: #ffffff;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
 
 #recentposts {
+  padding: 8px 20px;
+  background-color: #ffffff;
   grid-column: 1 / -2;
   grid-row: 1 / -1;
 }
 
 aside {
+  background-color: #ffffff;
   grid-column: -2 / -1;
   grid-row: 1 / -1;
   display: flex;

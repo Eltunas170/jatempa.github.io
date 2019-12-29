@@ -6,6 +6,7 @@ import Posts from "../components/posts"
 import SEO from "../components/seo"
 
 import "../css/index.css"
+import profilePicture from "../images/profile.png"
 
 const IndexPage = (props) => {
   return (
@@ -15,6 +16,7 @@ const IndexPage = (props) => {
       <Posts />
 
       <Aside
+        profilePicture={profilePicture}
         heading="Acerca de mí"
         content="Entusiasta de la programación en constante aprendizaje"
       />

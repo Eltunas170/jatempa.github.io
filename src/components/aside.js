@@ -1,9 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
 
-const Aside = ({ heading, content }) => (
+const Aside = ({ heading, content, profilePicture }) => (
   <aside>
-    <img src="https://via.placeholder.com/150" alt="profile" style={{ padding: `20px 20px` }} />
+    <img src={profilePicture} alt="profile" style={{ padding: `20px 20px`, height: `150px`, width: `150px`, borderRadius: `50%` }} />
     <section className="about-me" style={{ textAlign: `center` }}>
       <h3>{heading}</h3>
       <p>{content}</p>

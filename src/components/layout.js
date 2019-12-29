@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
     <div className="container">
       <Header siteTitle={data.site.siteMetadata.title} />
 
-      <main style={{ padding: '8px 20px' }}>{children}</main>
+      <main>{children}</main>
 
       <section id="othersections">
         <Subsection
