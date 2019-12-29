@@ -90,7 +90,7 @@ footer {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
     display: grid;
-    grid-template: minmax(200px, auto) / 1fr;
+    grid-template: repeat(3, minmax(100px, auto)) / 1fr;
   }
 
   footer {
