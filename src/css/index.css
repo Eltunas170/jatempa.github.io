@@ -13,6 +13,7 @@ main {
 }
 
 aside {
+  text-align: center;
   background-color: #ffffff;
   grid-column: -2 / -1;
   grid-row: 1 / -1;
