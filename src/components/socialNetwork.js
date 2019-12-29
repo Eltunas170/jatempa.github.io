@@ -5,7 +5,7 @@ const SocialNetwork = ({name, logo, url}) => (
   <span>
     <img src={logo}  style={{ height: `20px`, width: `20px`, borderRadius: `50%` }} alt={`${name}pic`} />
     {` `}
-    <strong><a href={url}>{name}</a></strong>
+    <a href={url} style={{ textDecoration: `none`, fontWeight: `bold` }}>{name}</a>
   </span>
 )
 

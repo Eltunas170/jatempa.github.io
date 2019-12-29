@@ -29,7 +29,7 @@ const IndexPage = (props) => {
 
       <aside>
         <Profile
-          aboutMe="Entusiasta de la programación en constante aprendizaje"
+          aboutMe="Entusiasta de la programación en constante aprendizaje."
           profilePicture={profilePicture}
           github={data.site.siteMetadata.github}
           twitter={data.site.siteMetadata.twitter}

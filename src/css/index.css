@@ -13,16 +13,25 @@ main {
 }
 
 aside {
-  text-align: center;
   background-color: #ffffff;
   grid-column: -2 / -1;
   grid-row: 1 / -1;
-  display: flex;
-  flex-direction: column;
 }
 
-aside img {
-  margin: 0 auto;
+aside #profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+aside #profile img#mypic {
+  padding: 20px 20px;
+}
+
+aside #info {
+  margin-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media(max-width: 768px) {
@@ -38,13 +47,27 @@ aside img {
   aside {
     grid-column: 1 / -1;
     grid-row: 2 / -1;
+    display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+  }
+
+  aside #profile img#mypic {
+    padding: 10px 10px;
+  }
+
+  aside #profile span {
+    padding-bottom: 10px;
   }
 }
 
 @media(max-width: 500px) {
   aside {
     flex-direction: column;
+  }
+
+  aside #info {
+    padding-bottom: 20px;
   }
 }
