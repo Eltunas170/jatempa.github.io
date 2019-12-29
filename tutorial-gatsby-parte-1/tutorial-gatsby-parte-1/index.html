@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.35e10e7beb76eff623c2.css">code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#f8f8f2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}*{margin:0;padding:0}html{font:15px/1.5 Arial,Helvetica,sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{background-color:#ededed;margin:2.5rem auto;max-width:1024px}.container{display:grid;grid-template:150px minmax(250px,auto) minmax(250px,auto) 50px/repeat(12,1fr);gap:10px}.container>header{background-color:#fff;grid-column:1/-1;grid-row:1/2;display:flex;align-items:center}header img{padding:25px}main{grid-column:1/-1;grid-row:2/3}#othersections{grid-column:1/-1;grid-row:3/-2;display:grid;gap:10px;grid-template-columns:repeat(3,1fr)}footer{background-color:#fff;grid-column:1/-1;grid-row:4/-1;display:flex;align-items:center;justify-content:center}@media (max-width:768px),(max-width:1023px){.container{grid-template:150px minmax(500px,1fr) minmax(200px,auto) 50px/repeat(2,1fr)}main{grid-row:2/3}footer,main{grid-column:1/-1}footer{grid-row:4/-1}}@media (max-width:500px){.container{grid-template:minmax(200px,auto) minmax(500px,1fr) minmax(200px,auto) 50px/1fr}.container>header{display:flex;flex-direction:column}main{grid-column:1/-1;grid-row:2/3}#othersections{grid-column:1/-1;grid-row:3/4;display:grid;grid-template:repeat(3,minmax(100px,auto))/1fr}footer{grid-column:1/-1;grid-row:4/-1}}.post-container{background-color:#fff;padding:8px 20px;grid-column:1/-1;grid-row:1/-1}main{display:grid;gap:10px;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr)}#recentposts{padding:8px 20px;grid-column:1/-2}#recentposts,aside{background-color:#fff;grid-row:1/-1}aside{grid-column:-2/-1}aside #profile{display:flex;flex-direction:column;align-items:center}aside #profile img#mypic{padding:20px}aside #info{margin-top:10px;padding-left:20px;padding-right:20px}@media(max-width:768px){main{grid-template-rows:minmax(400px,auto) minmax(100px,auto)}#recentposts{grid-column:1/-1;grid-row:1/2}aside{grid-column:1/-1;grid-row:2/-1;display:flex;flex-direction:row;align-items:center;justify-content:center}aside #profile img#mypic{padding:10px}aside #profile span{padding-bottom:10px}}@media(max-width:500px){aside{flex-direction:column}aside #info{padding-bottom:20px}}</style><meta name="generator" content="Gatsby 2.18.12"/><title data-react-helmet="true">Introducción al desarrollo de sitios estáticos con Gatsby - Parte 1 | Blog Personal</title><meta data-react-helmet="true" name="description" content="Introducción Durante los últimos fines de semana algunos miembros de la comunidad de Mexicali Open Source nos reunimos en las instalaciones de La Playa Delux…"/><meta data-react-helmet="true" property="og:title" content="Introducción al desarrollo de sitios estáticos con Gatsby - Parte 1"/><meta data-react-helmet="true" property="og:description" content="Introducción Durante los últimos fines de semana algunos miembros de la comunidad de Mexicali Open Source nos reunimos en las instalaciones de La Playa Delux…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Jorge Atempa"/><meta data-react-helmet="true" name="twitter:title" content="Introducción al desarrollo de sitios estáticos con Gatsby - Parte 1"/><meta data-react-helmet="true" name="twitter:description" content="Introducción Durante los últimos fines de semana algunos miembros de la comunidad de Mexicali Open Source nos reunimos en las instalaciones de La Playa Delux…"/><link rel="icon" href="/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link as="script" rel="preload" href="/webpack-runtime-6a85515f7dded0615676.js"/><link as="script" rel="preload" href="/app-520cb98666c746a1ae54.js"/><link as="script" rel="preload" href="/styles-f196b0297156c054e595.js"/><link as="script" rel="preload" href="/commons-732ab8dccd46c1bdbc22.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-4e29ce9e615770f50c03.js"/><link as="fetch" rel="preload" href="/page-data/tutorial-gatsby-parte-1/tutorial-gatsby-parte-1/page-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="container"><header><img src="https://via.placeholder.com/100" alt="logo"/><h1><a style="box-shadow:none;text-decoration:none;color:inherit" href="/">Blog Personal</a></h1></header><main><div class="post-container"><h1>Introducción al desarrollo de sitios estáticos con Gatsby - Parte 1</h1><p>April 20, 2019</p><div><h3>Introducción</h3>
+<p>Durante los últimos fines de semana algunos miembros de la comunidad de Mexicali Open Source nos reunimos en las instalaciones de <a href="https://www.facebook.com/LaPlayaDeLux/">La Playa Delux Coworking</a> con el objetivo de conocer e implementar los conceptos básicos de la herramienta de desarrollo ágil para sitios estáticos <a href="https://www.gatsbyjs.org/">Gatsby</a>.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ed14f27cfbfa5112e78f552fe63fae2e/86f56/reunion.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFBP/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABVugNttkcR//EABkQAAMBAQEAAAAAAAAAAAAAAAEDEgIiAP/aAAgBAQABBQIO6XMrOCPVxh05/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAHBAAAQMFAAAAAAAAAAAAAAAAAAERMQIQIUFR/9oACAEBAAY/AqMQN1SN3Y//xAAZEAADAQEBAAAAAAAAAAAAAAABESEAMVH/2gAIAQEAAT8hEQowReBbqwRxmWFC3Vt3enSeY0j3/9oADAMBAAIAAwAAABBEz//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQMBAT8Qbq0p/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERIUH/2gAIAQIBAT8Qy4RPp//EABsQAQADAQEBAQAAAAAAAAAAAAEAESFBMVGB/9oACAEBAAE/EBhofHKgFgZi73efsV6MCtmexUSqdhVAGoizOae0/YCuos//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Taller de Gatsby"
+        title="Taller de Gatsby"
+        src="/static/ed14f27cfbfa5112e78f552fe63fae2e/88218/reunion.jpg"
+        srcset="/static/ed14f27cfbfa5112e78f552fe63fae2e/7237a/reunion.jpg 148w,
+/static/ed14f27cfbfa5112e78f552fe63fae2e/0cfdf/reunion.jpg 295w,
+/static/ed14f27cfbfa5112e78f552fe63fae2e/88218/reunion.jpg 590w,
+/static/ed14f27cfbfa5112e78f552fe63fae2e/77d57/reunion.jpg 885w,
+/static/ed14f27cfbfa5112e78f552fe63fae2e/5a917/reunion.jpg 1180w,
+/static/ed14f27cfbfa5112e78f552fe63fae2e/86f56/reunion.jpg 4160w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Gatsby es una herramienta muy potente basada en <a href="https://reactjs.org/">ReactJS</a> (librería desarrollada e implementada por Facebook para construir interfaces gráficas). Si estas comenzando o quieres aprender ReactJS, inclusive puedes utilizar Gatsby como medio para este propósito. </p>
+<p>Por otra parte, Gatsby cuenta con una gama de diversos tipos de <em>plugins</em> (librerías que proveen funcionalidad particular) para extender su funcionalidad. Una de las principales fortalezas de Gatsby esta en su flexibilidad para el manejo de diferentes fuentes de datos, es decir, las fuentes de datos pueden proveenir de diferentes tipos de archivos tales como: CSV, JSON, YAML, Documento de Google entre otros.</p>
+<p>En esta serie de publicaciones describiremos el proceso de desarrollo de sitios estáticos con Gatsby. Para fines del tutorial, cabe mencionar que el entorno de desarrollo utilizado fue el siguiente:</p>
+<ol>
+<li>Sistema Operativo de Linux Ubuntu versión <em>18.04</em>.</li>
+<li>NodeJS versión <em>10.15.3</em>.</li>
+</ol>
+<h3>Instalación de NodeJS</h3>
+<p>Para comenzar con Gatsby, es importante contar con una versión reciente o posterior a la <em><strong>8.x</strong></em> de <a href="https://nodejs.org">NodeJS</a> en nuestro Sistema Operativo. </p>
+<p>Para la instalación de NodeJS <a href="https://linux4one.com/how-to-install-node-js-with-npm-on-ubuntu-18-04/">[1]</a> necesitamos agregar a la lista lista de repositorios, un enlace a la fuente que contenga una versión reciente del mismo.</p>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token function">curl</span> -sL https://deb.nodesource.com/setup_10.x <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span> -</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>Después, actualizamos los repositorios locales con el siguiente comando.</p>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token punctuation">;</span> <span class="token function">sudo</span> <span class="token function">apt</span> upgrade</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>Procedemos entonces con la instalación de NodeJS y el gestor de paquetes NPM.</p>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nodejs <span class="token function">npm</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>Para validar dicha instalación, ejecutamos los siguientes comandos respectivamente.</p>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ node -v
+$ <span class="token function">npm</span> -v</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre></div>
+<h3>Instalación de Gatsby</h3>
+<p>Antes de comenzar con la instalación, cabe destacar que es altamente recomendado utilizar el gestor de paquetes NPM como usuario regular, es decir, sin especificar el famoso comando <em><strong>sudo</strong></em> el cuál nos otorgá privilegios de <em>super usuario</em>. Para este último propósito, podemos seguir los pasos recomendados en <a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">[2]</a> y a continuación descritos.</p>
+<ol>
+<li>El primer paso, consiste en crear un directorio oculto en el directorio HOME de nuestro sistema.</li>
+</ol>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$  <span class="token function">mkdir</span> ~/.npm-global</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<ol start="2">
+<li>Después debemos exportar la variable de entorno que apunte al directorio creado anteriormente.</li>
+</ol>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>~/.npm-global/bin:<span class="token environment constant">$PATH</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<ol start="3">
+<li>Enseguida debemos actualizar las variables del sistema con el siguiente comando.</li>
+</ol>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token builtin class-name">source</span> ~/.profile</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<ol start="4">
+<li>Por último, para la instalación del intérprete de comandos de Gatsby ejecutamos la siguiente instrucción.</li>
+</ol>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g gatsby-cli</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>El prefijo <code class="language-text">-g</code> permite contar con el intérprete de comandos de Gatsby de forma global, es decir, lo podemos ejecutar desde cualquier ubicación del sistema a través de nuestra Terminal.</p>
+<h3>Crear un sitio con Gatsby</h3>
+<p>Para crear un nuevo sitio <a href="https://www.gatsbyjs.org/docs/quick-start">[3]</a>, ejecuta el siguiente comando.</p>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ gatsby new blog</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>Cámbiate al directorio de tú sitio, es decir, <code class="language-text">blog</code>.</p>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ <span class="token builtin class-name">cd</span> blog</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>Ejecuta el servicio de Gatsby en modo de desarrollo ejecutando la siguiente instrucción.</p>
+<div class="gatsby-highlight" data-language="bash"><pre style="counter-reset: linenumber NaN" class="language-bash line-numbers"><code class="language-bash">$ gatsby develop</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
+<p>Posteriormente, accede a la siguiente dirección <code class="language-text">http://localhost:8000/</code> desde tú navegador web para observar el siguiente resultado.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/115a3004eefea3d8465b27347059d613/c7707/initial_gatsby.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.419213973799124%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAAA2klEQVQoz51QSxLBQBTM0VCWjoByBOwcQHEDbOz8LmHDxso2iigbK0pmTEgmY9ISJfFJUKOrevH69et672mVTBsR021Usx00ikM0SyPU8wPUC33Ucl2UUy28eD9QY+YZD9oge4aVvoax2OB4OMGiNhh59nynhgQQSmBSE0JyqELzPA8xSg/CcWHMt3BO7s0YaIneN0YbhkIAmzLMemPok2XYjHo/N3wuwiHhCOhTAxdXvOhKgbeh+6DFOMjOip2jHuhD+r9iFgfnLuRFxt7x18m/NKUNk85UCb0CFeX0s6tpjUMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Welcome to Gatsby"
+        title="Welcome to Gatsby"
+        src="/static/115a3004eefea3d8465b27347059d613/799d3/initial_gatsby.png"
+        srcset="/static/115a3004eefea3d8465b27347059d613/00d96/initial_gatsby.png 148w,
+/static/115a3004eefea3d8465b27347059d613/0b23c/initial_gatsby.png 295w,
+/static/115a3004eefea3d8465b27347059d613/799d3/initial_gatsby.png 590w,
+/static/115a3004eefea3d8465b27347059d613/2a3d6/initial_gatsby.png 885w,
+/static/115a3004eefea3d8465b27347059d613/ae92f/initial_gatsby.png 1180w,
+/static/115a3004eefea3d8465b27347059d613/c7707/initial_gatsby.png 1832w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Si todo ha ido bien, a partir de este momento ya podemos desarrollar páginas para nuestro sitio.</p>
+<h3>¿Como crear una nueva página?</h3>
+<p>Para crear una nueva página, agregaremos un archivo llamado <code class="language-text">new-page.js</code> dentro de la carpeta <code class="language-text">blog/src/pages</code> con el siguiente contenido:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre style="counter-reset: linenumber 0" class="language-jsx line-numbers"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">NewPage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hola desde una nueva página</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> NewPage</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>Al acceder a la siguiente ruta <code class="language-text">http://localhost:8000/new-page</code> el resultado debe ser similar al siguiente.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/85289c696cb9bb3c3233b678a59d22e6/607dd/new-page.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 28.27027027027027%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAAAcklEQVQY061OiwqFIBQ7//+HQVR6rG+wfKwmBIcoqMsdDOc2hzKpQkOAcw7ee4RDXzkOA/To3WX0+U41YOo7CI1lnlvIgMMxRtRaUUpppLZ36+eckVJq57ptEApLhiz+CnkKzl99pTwF5+gb2L7gD7CDO9o/1Pz3MJOlAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="New Page"
+        title="New Page"
+        src="/static/85289c696cb9bb3c3233b678a59d22e6/799d3/new-page.png"
+        srcset="/static/85289c696cb9bb3c3233b678a59d22e6/00d96/new-page.png 148w,
+/static/85289c696cb9bb3c3233b678a59d22e6/0b23c/new-page.png 295w,
+/static/85289c696cb9bb3c3233b678a59d22e6/799d3/new-page.png 590w,
+/static/85289c696cb9bb3c3233b678a59d22e6/2a3d6/new-page.png 885w,
+/static/85289c696cb9bb3c3233b678a59d22e6/ae92f/new-page.png 1180w,
+/static/85289c696cb9bb3c3233b678a59d22e6/607dd/new-page.png 1850w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Como puedes observar, no fue necesario establecer mecanismos para el enrutamiento o direccionamiento hacia nuestra nueva página. Esto es  parte del potencial que ofrece Gatsby para el desarrollo ágil.</p>
+<p>Por otro lado, sin notarlo ya hemos interactuado con componentes de ReactJS, ya que precisamente esto es lo que hemos desarrollado <em><strong>¡un componente!</strong></em>, que posteriormente fue procesado y traducido a una página HTML por parte de Gatsby.</p>
+<p>Sin embargo, no se parece mucho a la página ubicada en la raíz del sitio, ¿cierto?, esto es debido a que su contenido no incluye la plantilla de diseño predeterminada. </p>
+<p>Para realizar este ajuste, solo debemos importar la plantilla predeterminada a nuestro archivo <code class="language-text">new-page.js</code>, como se muestra a continuación.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre style="counter-reset: linenumber 0" class="language-jsx line-numbers"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="gatsby-highlight-code-line"><span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">"../components/layout"</span></span>
+<span class="token keyword">const</span> <span class="token function-variable function">NewPage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+<span class="gatsby-highlight-code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Layout</span></span><span class="token punctuation">></span></span><span class="token plain-text"></span></span><span class="token plain-text">    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hola desde una nueva página</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text"></span>
+<span class="gatsby-highlight-code-line"><span class="token plain-text">  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Layout</span></span><span class="token punctuation">></span></span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> NewPage</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>Gracias a que Gatsby cuenta con <em><strong>hot-reloading</strong></em> (mecanismo que construye el sitio en segundo plano evitando tener que refrescar el navegador) solo necesitamos regresar al navegador y observar la actualización realizada, como se muestra a continuación.</p>
+<p><img src="/2285540cb6590883942e97ee0768c2fc/new-page-with-template-animation.gif" alt="New page with default template"></p>
+<h3>Conclusiones</h3>
+<p>En esta primer entrega, hemos destacado algunos aspectos básicos de la herramienta de desarrollo ágil para sitios estáticos Gatsby. Además fue descrito el proceso de instalación del intérprete de comandos y para finalizar se mostro la facilidad con la que se pueden construir nuevas páginas a través de un ejemplo.</p>
+<h3>Referencias</h3>
+<ol>
+<li><a href="https://linux4one.com/how-to-install-node-js-with-npm-on-ubuntu-18-04/">How to install Node.js with npm on Ubuntu 18.04</a></li>
+<li><a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">Resolving EACCES permissions errors when installing packages globally</a></li>
+<li><a href="https://www.gatsbyjs.org/docs/quick-start">Gatsby Quick Start</a></li>
+</ol></div><hr/><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/como-conoci-mxlos/">← <!-- -->Como conocí a la comunidad de Mexicali Open Source</a></li><li></li></ul></div></main><section id="othersections"><section style="background-color:#ffffff"><header style="padding:5px 0 5px 10px"><h3>ReactJS</h3></header><p style="padding:5px 10px 5px 10px">React te ayuda a crear interfaces de usuario interactivas de forma sencilla.</p></section><section style="background-color:#ffffff"><header style="padding:5px 0 5px 10px"><h3>Flutter</h3></header><p style="padding:5px 10px 5px 10px">Flutter es el kit de herramientas de UI de Google para realizar aplicaciones, compiladas nativamente, para móvil, web y escritorio desde una única base de código.</p></section><section style="background-color:#ffffff"><header style="padding:5px 0 5px 10px"><h3>Symfony</h3></header><p style="padding:5px 10px 5px 10px">El framework PHP líder para crear sitios y aplicaciones web.</p></section></section><footer><span>© <!-- -->2019<!-- -->, Built with <a href="https://www.gatsbyjs.org">Gatsby</a></span></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tutorial-gatsby-parte-1/tutorial-gatsby-parte-1/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-520cb98666c746a1ae54.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-4e29ce9e615770f50c03.js"],"component---src-pages-404-js":["/component---src-pages-404-js-937d1b115ca56d3e6694.js"],"component---src-pages-index-js":["/component---src-pages-index-js-41dc84265670cec349e1.js"],"component---src-pages-page-2-js":["/component---src-pages-page-2-js-9091273db8b77923343d.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-js-4e29ce9e615770f50c03.js" async=""></script><script src="/commons-732ab8dccd46c1bdbc22.js" async=""></script><script src="/styles-f196b0297156c054e595.js" async=""></script><script src="/app-520cb98666c746a1ae54.js" async=""></script><script src="/webpack-runtime-6a85515f7dded0615676.js" async=""></script></body></html>
