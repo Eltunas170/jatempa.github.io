@@ -17,11 +17,11 @@ body {
 
 .container {
   display: grid;
-  grid-template: 150px minmax(500px, 1fr) 250px 50px / repeat(12, 1fr);
+  grid-template: 150px minmax(500px, 1fr) minmax(250px, auto) 50px / repeat(12, 1fr);
   gap: 10px;
 }
 
-header {
+.container > header {
   background-color: #ffffff;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
@@ -34,23 +34,16 @@ header img {
 }
 
 main {
-  background-color: #ffffff;
-  grid-column: 1 / -2;
+  grid-column: 1 / -1;
   grid-row: 2 / -3;
 }
 
-section#othersections {
+#othersections {
   grid-column: 1 / -1;
   grid-row: 3 / -2;
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
-}
-
-aside {
-  background-color: #ffffff;
-  grid-column: -2 / -1;
-  grid-row: 2 / -3;
 }
 
 footer {
@@ -62,9 +55,9 @@ footer {
   justify-content: center;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px), (max-width: 1023px) {
   .container {
-    grid-template: 150px minmax(500px, 1fr) repeat(2, minmax(200px, auto)) 50px / repeat(2, 1fr);
+    grid-template: 150px minmax(500px, 1fr) minmax(200px, auto) 50px / repeat(2, 1fr);
   }
 
   main {
@@ -72,30 +65,15 @@ footer {
     grid-row: 2 / 3;
   }
 
-  section#othersections {
-    grid-column: 1 / -1;
-    grid-row: 3 / 4;
-  }
-
-  aside {
-    grid-column: 1 / -1;
-    grid-row: 4 / -2;
-    display: flex;
-  }
-
-  .about-me {
-    align-self: center;
-  }
-
   footer {
     grid-column: 1 / -1;
-    grid-row: 5 / -1;
+    grid-row: 4 / -1;
   }
 }
 
-@media(max-width: 500px) {
+@media (max-width: 500px) {
   .container {
-    grid-template: minmax(200px, auto) minmax(500px, 1fr) repeat(2, minmax(200px, auto)) 50px / 1fr;
+    grid-template: minmax(200px, auto) minmax(500px, 1fr) minmax(200px, auto) 50px / 1fr;
   }
 
   .container > header {
@@ -108,24 +86,15 @@ footer {
     grid-row: 2 / 3;
   }
 
-  section#othersections {
-    display: flex;
-    flex-direction: column;
-  }
-
-  aside {
+  #othersections {
     grid-column: 1 / -1;
-    grid-row: 4 / -2;
-    display: inline-flex;
-    flex-direction: column;
-  }
-
-  aside img {
-    margin: 0 auto;
+    grid-row: 3 / 4;
+    display: grid;
+    grid-template: minmax(200px, auto) / 1fr;
   }
 
   footer {
     grid-column: 1 / -1;
-    grid-row: 5 / -1;
+    grid-row: 4 / -1;
   }
 }
