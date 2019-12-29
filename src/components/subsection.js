@@ -6,7 +6,7 @@ const Subsection = ({ heading, content }) => (
     <header style={{ padding: '5px 0 5px 10px' }}>
       <h3>{heading}</h3>
     </header>
-    <p style={{ padding: '5px 0 5px 10px' }}>{content}</p>
+    <p style={{ padding: '5px 10px 5px 10px' }}>{content}</p>
   </section>
 )
 
